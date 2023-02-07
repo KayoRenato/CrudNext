@@ -77,7 +77,7 @@ This project is under license from MIT. For more details, see the [LICENSE](Lice
 Donate behind the QR code if this work helps you and you want to collaborate with a coffee :coffee:.
 <div style='display: flex; justify-content: center;  flex-direction:column; align-items: center;'>
   <img src="public/buy_coffee.jpeg" alt="buy me a coffee" width="150" height="150">
-  <p style='font-size: 12px; font-weight:500; color: #612F74; display: flex;  align-items: center;'>
+  <p style='font-size: 12px; font-weight:500; color: #8228D1; display: flex;  align-items: center;'>
   <img src="public/nu.svg" alt="Nubank Logo" width="24" height="24"> Nubank Pix</p>
 </div>
 ---
