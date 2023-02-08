@@ -16,7 +16,7 @@ export default function Layout(props: LayoutProps) {
             <Title>
                 {props.title}
             </Title>
-            <div className={`mx-4 my-2 flex flex-col`}>
+            <div className={`m-4 flex flex-col`}>
                 {props.children}
             </div>
         </div >

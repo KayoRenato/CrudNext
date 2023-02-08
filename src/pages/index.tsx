@@ -4,7 +4,7 @@ import Table from '../components/Table'
 import Customer from '../core/Customer'
 
 export default function Home() {
-  const customersList = [
+  const customersList: Customer[] = [
     new Customer('John Doe', 34, '1'),
     new Customer('Mary Doe', 26, '2'),
     new Customer('Ted Doe', 12, '3'),
