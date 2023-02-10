@@ -12,7 +12,13 @@ export default function Home() {
     new Customer('Keven Doe', 2, '5')
   ]
 
+  function selectedCustomer(customer: Customer){
+    console.log(`Edit ${customer.name}`)
+  }
 
+  function deletedCustomer(customer: Customer){
+    console.log(`Delete ${customer.name}`)
+  }
 
   return (
     <div className={`
@@ -27,7 +33,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout title='Customers'>
-        <Table customers={customersList}/>
+        <Table customers={customersList} selectedCustomer={selectedCustomer} deletedCustomer={deletedCustomer}/>
       </Layout>
     </div>
   )

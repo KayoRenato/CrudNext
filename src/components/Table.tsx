@@ -4,9 +4,44 @@ import { EditorIcon, TrashIcon } from "./Icons"
 
 interface TableProps {
     customers: Customer[]
+    selectedCustomer?: (customer: Customer) => void
+    deletedCustomer?: (customer: Customer) => void
 }
 
 export default function Table(props: TableProps) {
+
+    const ActionsVisible = props.selectedCustomer || props.deletedCustomer
+
+    function renderActions(client: Customer) {
+        return (
+            <td className="text-center flex h-11 justify-evenly align-baseline">
+
+                {props.selectedCustomer ? (
+                    <button
+                        className=" h-10 w-10 hover:text-sky-600"
+                        onClick={() => { props.selectedCustomer?.(client) }}
+                    >
+                        {EditorIcon}
+                    </button>
+                ) : false}
+
+                {props.deletedCustomer ? (
+                    <button
+                        className="h-10 w-10 hover:text-red-500"
+                        onClick={() => { props.deletedCustomer?.(client) }}
+                    >
+                        {TrashIcon}
+                    </button>) :
+                    false
+                }
+
+            </td>
+        )
+
+    }
+
+
+
     const renderTableContent = () => {
         return (
             props.customers.map(client => (
@@ -16,21 +51,7 @@ export default function Table(props: TableProps) {
                     <td className="text-center">{client.id}</td>
                     <td className="pl-6">{client.name}</td>
                     <td className="text-center">{client.age}</td>
-                    <td className="text-center flex h-11 justify-evenly align-baseline">
-                        <button
-                            className=" h-10 w-10hover:text-sky-600"
-                            onClick={() => { console.log(`Edit ${client.name}`) }}
-                        >
-                            {EditorIcon}
-                        </button>
-                        <button
-                            className="h-10 w-10 hover:text-red-500"
-                            onClick={() => { console.log(`Erase ${client.name}`) }}
-                        >
-                            {TrashIcon}
-                        </button>
-
-                    </td>
+                    {ActionsVisible ? renderActions(client) : false}
                 </tr>
             ))
         )
@@ -56,7 +77,7 @@ export default function Table(props: TableProps) {
                     <th>ID</th>
                     <th>Name</th>
                     <th>Age</th>
-                    <th className="w-20" />
+                    {ActionsVisible ? (<th className="w-20" />) : false}
                 </tr>
             </thead>
             <tbody className="">
