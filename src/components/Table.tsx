@@ -68,7 +68,6 @@ export default function Table(props: TableProps) {
     }
 
 
-
     return (
 
         <table className="w-full rounded-md overflow-hidden">
