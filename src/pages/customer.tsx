@@ -1,10 +1,12 @@
 import Head from 'next/head'
 import useCustomer from '../backend/db/hooks/useCustomer'
+import useCustomerData from '../backend/db/hooks/useCustomerData'
 import Form from '../components/Form'
 import Layout from '../components/Layout'
 
 export default function Home() {
-  const { customerState } = useCustomer()
+
+  const { customerSelected } = useCustomerData()
 
   return (
     <div className={`
@@ -19,7 +21,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout title='Customer'>
-        <Form customer={customerState} />
+        <Form customer={customerSelected} />
       </Layout>
     </div>
   )

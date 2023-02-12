@@ -1,5 +1,4 @@
 import useCustomer from "../backend/db/hooks/useCustomer"
-import Customer from "../core/Customer"
 import Button from "./Button"
 import { AddCustomerIcon } from "./Icons"
 

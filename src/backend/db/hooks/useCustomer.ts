@@ -3,12 +3,15 @@ import CustomerCollection from "../CustomerCollection"
 import Customer from "../../../core/Customer"
 import CustomerRepository from "../../../core/CustomerRepository"
 import { useRouter } from "next/router"
+import useCustomerData from "./useCustomerData"
 
 export default function useCustomer() {
     const router = useRouter()
     const repo: CustomerRepository = new CustomerCollection()
 
-    const [customerState, setCustomer] = useState<Customer>()
+    const { customerSelected, changeCustomer } = useCustomerData()
+
+    // const [customerState, setCustomer] = useState<Customer>()
     const [customersList, setCustomers] = useState<Customer[]>([])
 
     useEffect(getAllCustomers, [])
@@ -20,7 +23,7 @@ export default function useCustomer() {
     }
 
     function newCustomer() {
-        setCustomer(Customer.empty())
+        changeCustomer(Customer.empty())
         router.push('/customer')
     }
 
@@ -32,24 +35,17 @@ export default function useCustomer() {
 
     function selectedCustomer(customerSelected: Customer) {
         console.log('useCustomer - Customer Return: ', customerSelected)
-        // setCustomer(new Customer('Vini', 23, 'kjldkjask')) //Not set State
-        setCustomer(customerSelected) //Not set State
-        console.log('customerState - useState Return: ', customerState)
-        router.push({
-            pathname: '/customer',
-            // query: { 
-            //     id: customerSelected.id,
-            //     name: customerSelected.name,
-            //     age: customerSelected.age
-            //  }
-        })
+
+        changeCustomer(customerSelected) //Not set State
+        console.log('customerState - useState Return: ', customerSelected)
+        router.push('/customer')
     }
 
-    async function savedCustomer(customer: Customer) {
-        if (!!customer.id) {
-            await repo.update(customer)
+    async function savedCustomer(customerSelected: Customer) {
+        if (!!customerSelected.id) {
+            await repo.update(customerSelected)
         } else {
-            await repo.create(customer)
+            await repo.create(customerSelected)
         }
         getAllCustomers()
         router.push('/')
@@ -62,7 +58,6 @@ export default function useCustomer() {
 
 
     return {
-        customerState,
         customersList,
         selectedCustomer,
         deletedCustomer,
