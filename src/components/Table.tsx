@@ -1,3 +1,4 @@
+import { useContext } from "react"
 import Customer from "../core/Customer"
 import { EditorIcon, TrashIcon } from "./Icons"
 

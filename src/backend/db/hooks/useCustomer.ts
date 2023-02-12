@@ -8,7 +8,7 @@ export default function useCustomer() {
     const router = useRouter()
     const repo: CustomerRepository = new CustomerCollection()
 
-    const [customerState, setCustomer] = useState<Customer>(Customer.empty())
+    const [customerState, setCustomer] = useState<Customer>()
     const [customersList, setCustomers] = useState<Customer[]>([])
 
     useEffect(getAllCustomers, [])
@@ -31,16 +31,17 @@ export default function useCustomer() {
     }
 
     function selectedCustomer(customerSelected: Customer) {
-        // console.log('useCustomer - Customer Return: ', customerSelected)
+        console.log('useCustomer - Customer Return: ', customerSelected)
+        // setCustomer(new Customer('Vini', 23, 'kjldkjask')) //Not set State
         setCustomer(customerSelected) //Not set State
-        // console.log('customerState - useState Return: ', customerState)
+        console.log('customerState - useState Return: ', customerState)
         router.push({
             pathname: '/customer',
-            query: { 
-                id: customerSelected.id,
-                name: customerSelected.name,
-                age: customerSelected.age
-             }
+            // query: { 
+            //     id: customerSelected.id,
+            //     name: customerSelected.name,
+            //     age: customerSelected.age
+            //  }
         })
     }
 

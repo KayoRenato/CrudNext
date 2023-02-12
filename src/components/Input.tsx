@@ -2,7 +2,6 @@ interface InputProps {
     text: string
     type?: 'text' | 'number'
     value: any
-    readonly?: boolean
     className?: string
     onChange?: (value: any) => void
 }
@@ -16,7 +15,6 @@ export default function Input(props: InputProps) {
             <input
                 type={props.type ?? 'text'}
                 value={props.value} min={0} max={100}
-                readOnly={props.readonly}
                 onChange={e => props.onChange?.(e.target.value)}
                 className={`mx-2 px-4 h-12 ${props.className ?? ''}
                  bg-gray-200 focus:outline-none border-2

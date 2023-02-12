@@ -1,22 +1,24 @@
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+// import { useRouter } from "next/router";
+import { useState } from "react";
 import useCustomer from "../backend/db/hooks/useCustomer";
 import Customer from "../core/Customer";
 import Button from "./Button";
 import Input from "./Input";
 
 interface FormProps {
-    customer: Customer;
+    customer?: Customer;
 }
 
 export default function Form(props: FormProps) {
+    // const router = useRouter();
 
-    const router = useRouter();
+    // const id = props.customer?.id || router.query.id;
+    // const [name, setName] = useState(props.customer?.name || router.query.name)
+    // const [age, setAge] = useState(props.customer?.age || router.query.age)
 
-
-    const id = props.customer?.id || router.query.id;
-    const [name, setName] = useState(props.customer?.name || router.query.name)
-    const [age, setAge] = useState(props.customer?.age || router.query.age)
+    const id = props.customer?.id
+    const [name, setName] = useState(props.customer?.name)
+    const [age, setAge] = useState(props.customer?.age)
 
     const { savedCustomer, abortChange } = useCustomer()
 
