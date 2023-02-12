@@ -10,12 +10,6 @@ interface FormProps {
 }
 
 export default function Form(props: FormProps) {
-    // const router = useRouter();
-
-    // const id = props.customer?.id || router.query.id;
-    // const [name, setName] = useState(props.customer?.name || router.query.name)
-    // const [age, setAge] = useState(props.customer?.age || router.query.age)
-
     const id = props.customer?.id
     const [name, setName] = useState(props.customer?.name)
     const [age, setAge] = useState(props.customer?.age)
@@ -41,8 +35,7 @@ export default function Form(props: FormProps) {
                 onChange={setAge} />
             <div className="flex flex-row items-end">
                 <Button type="primary" onSubmit={() => {
-                    // (name && age) ?? 
-                    savedCustomer(newClient)
+                    (!!name && !!+age) ? savedCustomer(newClient) : false
                 }}>
                     {!!id ? 'Update' : 'Create'}
                 </Button>
