@@ -9,9 +9,8 @@ export default function useCustomer() {
     const router = useRouter()
     const repo: CustomerRepository = new CustomerCollection()
 
-    const { customerSelected, changeCustomer } = useCustomerData()
+    const { changeCustomer } = useCustomerData()
 
-    // const [customerState, setCustomer] = useState<Customer>()
     const [customersList, setCustomers] = useState<Customer[]>([])
 
     useEffect(getAllCustomers, [])
