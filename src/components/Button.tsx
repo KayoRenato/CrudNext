@@ -1,5 +1,4 @@
 import { useRouter } from 'next/router'
-import useCustomer from '../backend/db/hook/useCustomer';
 
 type ButtonType = 'primary' | 'secondary' | 'fab' | 'link';
 
@@ -46,6 +45,7 @@ export default function Button(props: ButtonProps) {
                 ${classButton(props.type ?? 'primary')}
                 flex justify-center items-center mx-2`
             }
+            onClick={props.onSubmit}
         >
             {props.children}
         </button >

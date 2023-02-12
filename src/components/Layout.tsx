@@ -1,4 +1,3 @@
-import useCustomer from "../backend/db/hook/useCustomer";
 import Title from "./Title";
 
 interface LayoutProps {

@@ -4,7 +4,7 @@ interface InputProps {
     value: any
     readonly?: boolean
     className?: string
-    onChange?: (event: any) => void
+    onChange?: (value: any) => void
 }
 
 export default function Input(props: InputProps) {

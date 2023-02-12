@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import useCustomer from '../backend/db/hook/useCustomer'
+import useCustomer from '../backend/db/hooks/useCustomer'
 import Layout from '../components/Layout'
 import Table from '../components/Table'
 
