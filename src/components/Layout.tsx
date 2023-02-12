@@ -1,12 +1,16 @@
+import useCustomer from "../backend/db/hook/useCustomer";
 import Title from "./Title";
 
 interface LayoutProps {
     title: string
     children: any
     hasButtonCreate?: boolean
+    hRef?: string
+
 }
 
 export default function Layout(props: LayoutProps) {
+
     return (
         <div className={`
             flex flex-col w-2/3 max-w-screen-md

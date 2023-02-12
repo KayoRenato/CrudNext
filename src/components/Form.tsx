@@ -4,14 +4,14 @@ import Button from "./Button";
 import Input from "./Input";
 
 interface FormProps {
-    customer?: Customer
+    customer: Customer
 }
 
 
 export default function Form(props: FormProps) {
     const id = props.customer?.id
-    const [name, setName] = useState(props.customer?.name ?? '')
-    const [age, setAge] = useState(props.customer?.age ?? 0)
+    const [name, setName] = useState(props.customer.name )
+    const [age, setAge] = useState(props.customer.age)
 
     return (
         <div className="flex flex-row justify-between ">
@@ -29,7 +29,6 @@ export default function Form(props: FormProps) {
                 className={'w-20'}
                 onChange={setAge} />
             <div className="flex flex-row items-end">
-
                 <Button type="primary">{id ? 'Update' : 'Create'}</Button>
                 <Button type="secondary">Cancel</Button>
             </div>

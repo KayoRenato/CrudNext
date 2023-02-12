@@ -1,24 +1,16 @@
 import Head from 'next/head'
+import useCustomer from '../backend/db/hook/useCustomer'
 import Layout from '../components/Layout'
 import Table from '../components/Table'
-import Customer from '../core/Customer'
+
 
 export default function Home() {
-  const customersList: Customer[] = [
-    new Customer('John Doe', 34, '1'),
-    new Customer('Mary Doe', 26, '2'),
-    new Customer('Ted Doe', 12, '3'),
-    new Customer('Steve Doe', 8, '4'),
-    new Customer('Keven Doe', 2, '5')
-  ]
 
-  function selectedCustomer(customer: Customer){
-    console.log(`Edit ${customer.name}`)
-  }
-
-  function deletedCustomer(customer: Customer){
-    console.log(`Delete ${customer.name}`)
-  }
+  const { 
+    customersList,
+    selectedCustomer,
+    deletedCustomer
+  } = useCustomer()
 
   return (
     <div className={`
@@ -32,8 +24,10 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Layout title='Customers' hasButtonCreate>
-        <Table customers={customersList} selectedCustomer={selectedCustomer} deletedCustomer={deletedCustomer}/>
+      <Layout title='Customers' hasButtonCreate hRef='/customer'>
+        <Table customers={customersList}
+          selectedCustomer={selectedCustomer}
+          deletedCustomer={deletedCustomer} />
       </Layout>
     </div>
   )

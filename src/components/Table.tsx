@@ -1,7 +1,6 @@
 import Customer from "../core/Customer"
 import { EditorIcon, TrashIcon } from "./Icons"
 
-
 interface TableProps {
     customers: Customer[]
     selectedCustomer?: (customer: Customer) => void

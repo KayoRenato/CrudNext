@@ -1,10 +1,12 @@
-import Link from "next/link";
+import { useRouter } from 'next/router'
+import useCustomer from '../backend/db/hook/useCustomer';
 
 type ButtonType = 'primary' | 'secondary' | 'fab' | 'link';
 
 interface ButtonProps {
     children: any
     type?: ButtonType
+    onSubmit?: () => void
 }
 
 function classButton(typeButton: ButtonType): string {
@@ -36,16 +38,13 @@ function classButton(typeButton: ButtonType): string {
 }
 
 export default function Button(props: ButtonProps) {
+    const router = useRouter();
 
     return (
         <button
             className={`
                 ${classButton(props.type ?? 'primary')}
-                flex justify-center items-center mx-2
-                
-                `
-            }
-            onClick={() => console.log('Create new customer')
+                flex justify-center items-center mx-2`
             }
         >
             {props.children}
