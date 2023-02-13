@@ -25,8 +25,8 @@ I create this project to practice fundamental concepts of Hooks like useContext,
 ## :sparkles: Features ##
 
 :ballot_box_with_check: Create and edit customer exploring useContext and useState;  
-:ballot_box_with_check: List Customers exploring useEffect and useState;  
-:ballot_box_with_check: Delete Customer exploring useEffect;  
+:ballot_box_with_check: List customer exploring useEffect and useState;  
+:ballot_box_with_check: Delete customer exploring useEffect;  
 :ballot_box_with_check: Data persistence on Firestore;  
 :ballot_box_with_check: Deploy of application with environment variables dynamic and domain name custom;  
 :black_square_button: Exploring other Hooks

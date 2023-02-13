@@ -35,7 +35,7 @@ export default function Form(props: FormProps) {
                 onChange={setAge} />
             <div className="flex flex-row items-end">
                 <Button type="primary" onSubmit={() => {
-                    (!!name && !!+age) ? savedCustomer(newClient) : false
+                    if(age) (!!name && !!+age) ? savedCustomer(newClient) : false
                 }}>
                     {!!id ? 'Update' : 'Create'}
                 </Button>

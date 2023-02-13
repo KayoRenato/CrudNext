@@ -6,7 +6,11 @@ interface CustomerContextProps {
     changeCustomer: (customer: Customer) => void;
 }
 
-const useCustomerContext = createContext<CustomerContextProps>({})
+const useCustomerContext = createContext<CustomerContextProps>({
+    customerSelected: Customer.empty(),
+    changeCustomer: () => { }
+})
+
 
 export function CustomerProvider(props: any) {
     const [customerSelected, setCustomerSelected] = useState<Customer>(Customer.empty())
