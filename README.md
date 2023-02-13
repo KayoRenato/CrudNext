@@ -1,5 +1,5 @@
 <h4 align="center">
-📊 Project Name 📊
+📝 CRUD Next 📝
 </h4>
 
 <hr>
@@ -19,13 +19,17 @@
 
 ## :dart: About ##
 
-Short Description
+I create this project to practice fundamental concepts of Hooks like useContext,
+ useState, and UseEffect in a CRUD basic with integration on Firestore.
 
 ## :sparkles: Features ##
 
-:ballot_box_with_check: Done Task;  
-:black_square_button: Not done Task  
-
+:ballot_box_with_check: Create and edit customer exploring useContext and useState;  
+:ballot_box_with_check: List Customers exploring useEffect and useState;  
+:ballot_box_with_check: Delete Customer exploring useEffect;  
+:ballot_box_with_check: Data persistence on Firestore;  
+:ballot_box_with_check: Deploy of application with environment variables dynamic and domain name custom;  
+:black_square_button: Exploring other Hooks
 
 ## :computer: Technologies & Requirements ##
 
@@ -36,10 +40,11 @@ The following dependencies were used in this project:
 - React-dom
 - Tailwindcss
 - Typescript
+- Firebase
 
 ## :clapper: Show Off ##
 
-<img src="public/name-project.gif" alt="show off application" >
+<img src="public/crudnext.gif" alt="show off application" >
 
 ## :checkered_flag: Starting ##
 
@@ -56,6 +61,13 @@ $ cd <Project-Name>
 # Install dependencies
 $ npm i
 
+# Create Auth Firebase Project and get environment variables:
+  - apiKey 
+  - authdDomain 
+  - projectId  
+
+# Create file .env in root like sample.env change environment variables
+
 # Run the project
 $ npm run dev
 
@@ -68,7 +80,7 @@ This project is under license from MIT. For more details, see the [LICENSE](Lice
 
 ## :gem: Deploy & Repository ##
 
-<a href="https://projectname.kayoio.com/" target="_blank">:rocket: Link to solution deployed</a>
+<a href="https://crudnext.kayoio.com/" target="_blank">:rocket: Link to solution deployed</a>
 
 <a href="https://github.com/KayoRenato/CrudNext" target="_blank">:octopus: Link to repository</a>
 
