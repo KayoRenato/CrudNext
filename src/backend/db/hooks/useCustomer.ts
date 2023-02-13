@@ -33,10 +33,7 @@ export default function useCustomer() {
     }
 
     function selectedCustomer(customerSelected: Customer) {
-        console.log('useCustomer - Customer Return: ', customerSelected)
-
-        changeCustomer(customerSelected) //Not set State
-        console.log('customerState - useState Return: ', customerSelected)
+        changeCustomer(customerSelected)
         router.push('/customer')
     }
 
