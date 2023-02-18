@@ -15,7 +15,7 @@ export default function Layout(props: LayoutProps) {
             flex flex-col w-2/3 max-w-screen-md
             bg-white text-gray-800
             shadow-xl rounded-md
-
+            
         `}>
             <Title hasButtonCreate={props.hasButtonCreate}>
                 {props.title}

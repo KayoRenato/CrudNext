@@ -19,23 +19,25 @@ export default function Form(props: FormProps) {
     const newClient = new Customer(name, age, id)
 
     return (
-        <div className="flex flex-row justify-between ">
+        <div className="
+            grid grid-rows-3 lg:flex lg:flex-row lg:justify-between
+        ">
             <Input
                 text="Name"
                 type="text"
                 value={name}
-                className={'w-80'}
+                className={'lg:w-80'}
                 onChange={setName}
             />
             <Input
                 text="Age"
                 type="number"
                 value={age}
-                className={'w-20'}
+                className={'lg:w-20'}
                 onChange={setAge} />
-            <div className="flex flex-row items-end">
+            <div className="flex flex-row items-end justify-end">
                 <Button type="primary" onSubmit={() => {
-                    if(age) (!!name && !!+age) ? savedCustomer(newClient) : false
+                    if (age) (!!name && !!+age) ? savedCustomer(newClient) : false
                 }}>
                     {!!id ? 'Update' : 'Create'}
                 </Button>
