@@ -12,7 +12,7 @@ function classButton(typeButton: ButtonType): string {
     switch (typeButton) {
         case 'primary':
             return (`
-                text-base h-12 w- px-6 py-2 rounded-md
+                text-base h-12 px-6 py-2 rounded-md
                 bg-gradient-to-tl from-sky-300 to-sky-500 
                 hover:bg-gradient-to-r hover:from-sky-600 hover:to-sky-600 
                 text-white text-center 

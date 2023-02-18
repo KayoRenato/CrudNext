@@ -35,7 +35,7 @@ export default function Form(props: FormProps) {
                 value={age}
                 className={'lg:w-20'}
                 onChange={setAge} />
-            <div className="flex flex-row items-end justify-end">
+            <div className="flex flex-row items-end justify-between sm:justify-end">
                 <Button type="primary" onSubmit={() => {
                     if (age) (!!name && !!+age) ? savedCustomer(newClient) : false
                 }}>

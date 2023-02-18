@@ -12,7 +12,7 @@ export default function Layout(props: LayoutProps) {
 
     return (
         <div className={`
-            flex flex-col w-2/3 max-w-screen-md
+            flex flex-col w-3/4 max-w-screen-md
             bg-white text-gray-800
             shadow-xl rounded-md
             
